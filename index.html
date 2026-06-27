@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pretty finds</title>
+  <link rel="stylesheet" href="global.css" />
+</head>
+<body>
+  <div class="splash-container">
+    <div class="logo-wrapper">
+      <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <defs>
+          <pattern id="lunares" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect width="20" height="20" fill="#f0a8c0"/>
+            <circle cx="10" cy="10" r="3.5" fill="#5c2e2e"/>
+          </pattern>
+          <filter id="mano" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <text x="50%" y="80%" text-anchor="middle" class="titulo-burbuja titulo-borde" filter="url(#mano)">pretty finds</text>
+        <text x="50%" y="80%" text-anchor="middle" class="titulo-burbuja" fill="url(#lunares)" filter="url(#mano)">pretty finds</text>
+      </svg>
+    </div>
+    <a href="tienda.html" <button class="btn-entrar" id="btnEntrar">entrar a la tienda</button>
+  </div>
+  <script>
+  document.getElementById('btnEntrar').addEventListener('click', function () {
+    document.body.classList.add('fade-out');
+    setTimeout(function () {
+      window.location.href = 'tienda.html';
+    }, 500);
+  });
+</script>
+</body>
+</html>
